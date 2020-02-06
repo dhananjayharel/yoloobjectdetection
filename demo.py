@@ -146,12 +146,12 @@ if __name__ == '__main__':
 
 
     # detect images in test floder.
-    for (root, dirs, files) in os.walk('/home/project/images/test'):
+    for (root, dirs, files) in os.walk('images/test'):
         if files:
             for f in files:
                 print(f)
                 path = os.path.join(root, f)
                 image = cv2.imread(path)
                 image = detect_image(image, yolo, all_classes)
-                cv2.imwrite('/home/project/images/res/' + f, image)
+                cv2.imwrite('images/res/' + f, image)
 
